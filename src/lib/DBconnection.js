@@ -6,10 +6,7 @@ const connectDB = async () => {
     if (!uri) {
       throw new Error('MONGO_URI is not defined in .env.local');
     }
-    await mongoose.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(uri);
     console.log('✅ Connected to the database');
   } catch (err) {
     console.error('❌ Database connection error:', err.message);
